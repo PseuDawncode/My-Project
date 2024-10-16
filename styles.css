@@ -1,8 +1,9 @@
-*{
+body{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Kumbh Sans', sans-serif;
+    background: #131313;
 }
 
 .navbar{
@@ -69,6 +70,51 @@
     height: 100%;
 }
 
+/* Services - Dropdown Menu Styling */
+.navbar__item {
+    position: relative;
+}
+
+.dropdown__menu {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: #333;
+    border-radius: 5px;
+    padding: 10px 0;
+    list-style: none;
+    z-index: 1000;
+}
+
+.dropdown__menu li {
+    text-align: left;
+}
+
+.dropdown__item {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.dropdown__item:hover {
+    background-color: #444;
+}
+
+
+.navbar__item.dropdown:hover .dropdown__menu {
+    display: block;
+}
+
+
+.navbar__item .fa-chevron-down {
+    margin-left: 5px;
+    font-size: 0.8rem;
+}
+
+/*Navbar menu*/
 .navbar__btn{
     display: flex;
     justify-content: center;
@@ -346,9 +392,11 @@
 .services{
     background: #141414;
     display: flex;
+    margin: 0;
+    padding: 0;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+
 }
 
 .services h1{
@@ -368,13 +416,14 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
 }
 .services__card{
     margin: 1rem;
     height: 525px;
     width: 400px;
     border-radius: 4px;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('./images/pic4.jpg');
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('./images/entrance.jpg');
     background-size: cover;
     position: relative;
     color: #fff;
@@ -385,11 +434,41 @@
     position: relative;
     color: #fff;
 }
+
+.services__card:nth-child(3){
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('./images/kitchen.jpg');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.services__card:nth-child(4){
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('./images/bedroom.jpg');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.services__card:nth-child(5){
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('./images/livingroom.jpg');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.services__card:nth-child(6){
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('./images/others.jpg');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
 .services h2{
     position: absolute;
     top: 350px;
     left: 30px;
 }
+
 .services__card p{
     position: absolute;
     top: 400px;
@@ -408,11 +487,72 @@
     font-size: 1rem;
     cursor: pointer;
 }
+
+.services__card button:hover{
+    background: #4837ff;
+    transition: all 0.3s ease;
+}
 .services__card:hover{
     transform: scale(1.075);
     transition: 0.2s ease-in;
     cursor: pointer;
 }
+
+
+/*Booknow - Paragraph */
+.content__container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    background-color: 	#222222;
+    margin-top: 10%;
+}
+.content__section {
+    padding: 50px 0;
+    text-align: center;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+
+/* Styling the text container */
+.content__text {
+    max-width: 700px;
+    margin-left: 50px;
+
+}
+
+.content__text h2 {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.content__text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+@media (max-width: 768px) {
+    .content__section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content__image img {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .content__text {
+        margin-left: 0;
+    }
+}
+
+
+
+
 @media screen and (max-width: 960px){
     .services{
         height: 1600px;
@@ -436,11 +576,16 @@
 /*Footer CSS*/
 .footer__container{
     background-color: #141414;
-    padding: 5rem 0;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    margin-top: 30px;
+    flex: 1;
 }
 #footer__logo{
     color: #fff;
@@ -549,4 +694,134 @@
         width: 100%;
     }
     
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+    padding: 50px 0;
+    background-color: #141414;
+    text-align: center;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.why-choose-us h2 {
+    background-color: #ff8177;
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, 
+    #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    background-size: 100%;
+    margin-bottom: 5rem;
+    font-size: 2.5rem;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.why-choose-us__container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.why-choose-us__card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.why-choose-us__card:hover {
+    transform: translateY(-10px);
+}
+
+.why-choose-us__card i {
+    font-size: 2.5rem;
+    color: #f76c6c;
+    margin-bottom: 20px;
+}
+
+.why-choose-us__card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.why-choose-us__card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/*projects.html style*/
+/* Styling for the review section */
+.reviews__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* Each review card */
+.review__card {
+    background-color: #222222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.customer__photo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+}
+
+.customer__message p {
+    font-size: 1.1rem;
+    color: #eeeeee;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.customer__name {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #f4511e;
+}
+
+.product__image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .reviews__container {
+        grid-template-columns: 1fr;
+    }
+
+    .product__image img {
+        width: 100%;
+    }
+
+    .customer__photo img {
+        width: 100px;
+        height: 100px;
+    }
 }
